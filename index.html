@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nixware Configurations for CS2</title>
+    <meta name="description" content="Purchase high-quality Nixware configurations for CS2, including rage and legit configs. Unleash your potential in the game!">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff0000, #000000);
+            color: #ffffff;
+            transition: background 0.3s;
+        }
+
+        header {
+            background: rgba(255, 0, 0, 0.8);
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            animation: fadeIn 0.5s;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            text-align: right;
+            animation: slideIn 0.5s;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .product-card {
+            background: rgba(255, 0, 0, 0.9);
+            border: 1px solid #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: zoomIn 0.5s;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3);
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .product-card img:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        .price {
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #ffff00;
+        }
+
+        .button {
+            background: #ff0000;
+            border: none;
+            color: #ffffff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background: #cc0000;
+            transform: scale(1.05);
+        }
+
+        .tags {
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .tag {
+            background: #000000;
+            color: #ffffff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 0 5px;
+            font-size: 0.8em;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            animation: fadeIn 0.5s;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background: #ff0000;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .back-to-top:hover {
+            background: #cc0000;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.5s;
+        }
+
+        .modal-content {
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%; /* Responsive width */
+            max-width: 400px; /* Max width for large screens */
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .modal-product-image {
+            max-width: 100%; /* Full-size product image */
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .product-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-product-details {
+            flex-grow: 1; /* Take remaining space */
+        }
+
+        .product-description {
+            font-size: 0.9em; /* Slightly smaller font */
+            color: #cccccc; /* Lighter color for description */
+            margin-top: 5px;
+        }
+
+        .loader {
+            font-size: 1.2em; /* Increase loader text size */
+            color: #ffffff;
+            margin-top: 10px;
+        }
+
+        /* Success and Wait Messages */
+        .success-tick {
+            color: green;
+            font-weight: bold;
+            margin-top: 15px;
+            display: none; /* Hidden by default */
+        }
+
+        .wait-message {
+            color: orange;
+            margin-top: 5px;
+            display: none; /* Hidden by default */
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 20px;
+            margin: 20px auto;
+            background: rgba(255, 0, 0, 0.8);
+            border-radius: 10px;
+            max-width: 600px;
+        }
+
+        .faq {
+            margin: 10px 0;
+        }
+
+        .faq h3 {
+            cursor: pointer;
+            margin: 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+        }
+
+        .faq p {
+            display: none;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        .newsletter input[type="email"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            width: 80%;
+            margin: 10px 0;
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Nixware Configurations for CS2</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <select id="categorySelect" onchange="searchProducts()">
+                    <option value="">All Categories</option>
+                    <option value="Rage Config">Rage Config</option>
+                    <option value="Legit Config">Legit Config</option>
+                </select>
+            </li>
+            <li><input type="text" class="search-input" id="searchInput" placeholder="Search..."></li>
+            <li><button class="search-button" onclick="searchProducts()">Search</button></li>
+            <li><button id="darkModeToggle" class="button">Toggle Dark Mode</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="product-card">
+            <img src="Ssci6V2SElo.jpg" alt="Nixware Rage Config" onclick="openImageModal('D0uHw5gU8AEUEzB.jpg')">
+            <h2>Nixware Rage Config</h2>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="price">$1.50</p>
+            <p class="product-description">Unleash your power with our Nixware Rage Config. Dominate your opponents and play like a pro!</p>
+            <div class="tags">
+                <span class="tag">Best Seller</span>
+                <span class="tag">New</span>
+            </div>
+            <button class="button" onclick="openModal('Nixware Rage Config', 29.99, 'Unleash your power with our Nixware Rage Config. Dominate your opponents and play like a pro!')">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+            <img src="Ssci6V2SElo.jpg" alt="Nixware Legit Config" onclick="openImageModal('Ssci6V2SElo.jpg')">
+            <h2>Nixware Legit Config</h2>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p class="price">$1.00</p>
+            <p class="product-description">Stay under the radar with our Nixware Legit Config for CS2. Perfect for players who want to play smart and avoid detection.</p>
+            <div class="tags">
+                <span class="tag">Discounted</span>
+            </div>
+            <button class="button" onclick="openModal('Nixware Legit Config', 19.99, 'Stay under the radar with our Nixware Legit Config for CS2. Perfect for players who want to play smart and avoid detection.')">Buy Now</button>
+        </div>
+
+        <!-- Additional Product Cards can be added here -->
+    </div>
+
+    <div class="faq-section">
+        <h2>Frequently Asked Questions (FAQ)</h2>
+        <div class="faq">
+            <h3 onclick="toggleFAQ(this)">What is Nixware?</h3>
+            <p>Nixware is a platform offering Legit cheating and Rage cheating.</p>
+        </div>
+        <div class="faq">
+            <h3 onclick="toggleFAQ(this)">How do I purchase a config?</h3>
+            <p>Simply click on the "Buy Now" button for the config you want and follow the checkout process.</p>
+        </div>
+        <div class="faq">
+            <h3 onclick="toggleFAQ(this)">Are there any discounts available?</h3>
+            <p>In the Feature!</p>
+        </div>
+    </div>
+
+    <div class="newsletter">
+        <h2>Subscribe to Our Newsletter</h2>
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <button class="button" onclick="subscribe()">Subscribe</button>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">Back to Top</button>
+
+    <footer>
+        <p>&copy; 2024 Nixware Configurations</p>
+        <div class="social-media">
+            <p>Follow us on:</p>
+            <a href="#" class="social-link">Twitter</a>
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Checkout</h2>
+            <div class="product-info">
+                <img src="Ssci6V2SElo.jpg" alt="Product Image" class="modal-product-image" onclick="openImageModal('Ssci6V2SElo.jpg')">
+                <div class="modal-product-details">
+                    <h3 id="productName">Product Name</h3>
+                    <p class="price" id="productPrice">$0.00</p>
+                    <p class="product-description" id="productDescription">Product description goes here.</p>
+                </div>
+            </div>
+            <p>Please enter your Discord username:</p>
+            <input type="text" id="discordUsername" placeholder="Your Discord Username" required>
+            <div class="loader" id="loadingIndicator" style="display:none;">Loading...</div>
+            <button class="button" id="confirmPurchase">Confirm Purchase</button>
+            <div class="success-tick" id="successTick">&#10003; Purchase Successful!</div>
+            <div class="wait-message" id="waitMessage">Please wait for a person to message you.</div>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeImageModal()">&times;</span>
+            <img id="largeImage" src="" alt="Product Image" style="width:100%;">
+        </div>
+    </div>
+
+    <script>
+        function openModal(productName, price, description) {
+            document.getElementById('productName').innerText = productName;
+            document.getElementById('productPrice').innerText = `$${price.toFixed(2)}`;
+            document.getElementById('productDescription').innerText = description;
+            document.getElementById('checkoutModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('checkoutModal').style.display = 'none';
+            document.getElementById('discordUsername').value = '';
+            document.getElementById('successTick').style.display = 'none';
+            document.getElementById('waitMessage').style.display = 'none';
+        }
+
+        function openImageModal(imageSrc) {
+            document.getElementById('largeImage').src = imageSrc;
+            document.getElementById('imageModal').style.display = 'block';
+        }
+
+        function closeImageModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        document.getElementById('confirmPurchase').onclick = function () {
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const successTick = document.getElementById('successTick');
+            const waitMessage = document.getElementById('waitMessage');
+
+            loadingIndicator.style.display = 'block';
+            successTick.style.display = 'none';
+            waitMessage.style.display = 'none';
+
+            setTimeout(() => {
+                loadingIndicator.style.display = 'none';
+                successTick.style.display = 'block';
+                waitMessage.style.display = 'block';
+            }, 2000); // Simulate a network request
+        };
+
+        document.getElementById('darkModeToggle').onclick = function () {
+            document.body.classList.toggle('dark-mode');
+        };
+
+        // Scroll to Top Functionality
+        window.onscroll = function () {
+            const backToTopButton = document.getElementById('backToTop');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        };
+
+        function scrollToTop() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+
+        // FAQ Toggle Function
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+        }
+
+        // Subscribe Function
+        function subscribe() {
+            const email = document.getElementById('email').value;
+            alert(`Thank you for subscribing with ${email}!`);
+            document.getElementById('email').value = ''; // Clear input after subscription
+        }
+    </script>
+</body>
+
+</html>
